@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "屏蔽 Enter 发送",
+    "description": "禁用 Enter 发送消息，只能点击发送按钮发送；Enter 变为换行键，输入框提示「已屏蔽Enter 发送」。"
+  }
+}

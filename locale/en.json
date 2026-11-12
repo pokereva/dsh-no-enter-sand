@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Block Enter Send",
+    "description": "Enter can no longer send a message — only the send button does. Enter inserts a line break, and the input box says so in gray."
+  }
+}

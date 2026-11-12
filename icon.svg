@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Enter blocked">
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#247bbf" fill-opacity="0.14" />
+  <rect x="11" y="17" width="42" height="30" rx="9" fill="none" stroke="#247bbf" stroke-width="4" />
+  <path d="M42 25v9H27" fill="none" stroke="#247bbf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M32 29l-5 5 5 5" fill="none" stroke="#247bbf" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M15 47L49 17" fill="none" stroke="#247bbf" stroke-width="4" stroke-linecap="round" />
+</svg>
