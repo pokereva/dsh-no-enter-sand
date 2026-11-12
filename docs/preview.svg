@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img" aria-label="dsh-no-enter-sand 行为示意：Enter 只换行，灰色提示出现在空输入框的占位符后与打字后的发送按钮左侧">
+  <rect x="0.75" y="0.75" width="898.5" height="468.5" rx="16" fill="#ffffff" stroke="#e6e8eb" stroke-width="1.5"/>
+  <g font-family="Segoe UI, Microsoft YaHei, PingFang SC, system-ui, sans-serif">
+
+    <!-- ===== 状态 1：空输入框 ===== -->
+    <text x="40" y="52" font-size="13" font-weight="600" fill="#111827">空输入框</text>
+    <text x="118" y="52" font-size="12.5" fill="#6b7280">提示接在占位符后面，颜色继承占位符的灰</text>
+
+    <rect x="40" y="68" width="580" height="126" rx="14" fill="#ffffff" stroke="#e6e8eb" stroke-width="1.5"/>
+    <text x="64" y="112" font-size="15" fill="#9aa0a6">输入消息<tspan fill="#9aa0a6">…</tspan><tspan fill="#c2c7ce">  · 已屏蔽Enter 发送</tspan></text>
+
+    <circle cx="70" cy="164" r="12" fill="none" stroke="#c9ced6" stroke-width="1.6"/>
+    <path d="M70 158.5v11M64.5 164h11" stroke="#c9ced6" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="588" cy="164" r="15" fill="#247bbf"/>
+    <path d="M588 171v-13M582.5 163.5L588 157.5l5.5 6" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- ===== 状态 2：开始打字 ===== -->
+    <text x="40" y="242" font-size="13" font-weight="600" fill="#111827">开始打字</text>
+    <text x="118" y="242" font-size="12.5" fill="#6b7280">占位符消失，提示移到发送按钮左侧常驻</text>
+
+    <rect x="40" y="258" width="580" height="126" rx="14" fill="#ffffff" stroke="#e6e8eb" stroke-width="1.5"/>
+    <text x="64" y="302" font-size="15" fill="#111827">帮我重构这个函数，先解释一下思路</text>
+
+    <circle cx="70" cy="354" r="12" fill="none" stroke="#c9ced6" stroke-width="1.6"/>
+    <path d="M70 348.5v11M64.5 354h11" stroke="#c9ced6" stroke-width="1.6" stroke-linecap="round"/>
+    <text x="556" y="358" font-size="12" text-anchor="end" fill="#9aa0a6">已屏蔽Enter 发送</text>
+    <circle cx="588" cy="354" r="15" fill="#247bbf"/>
+    <path d="M588 361v-13M582.5 353.5L588 347.5l5.5 6" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- 鼠标指针：只有点这里才发送 -->
+    <path d="M607 366l0 15 4-4 3 6.5 3-1.5-3-6.5 5.5-.5z" fill="#111827" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/>
+    <text x="626" y="384" font-size="11.5" fill="#6b7280">只有点这里才发送</text>
+
+    <!-- ===== 为什么：捕获阶段 ===== -->
+    <g font-size="12" fill="#6b7280">
+      <text x="660" y="110">窗口捕获阶段先拿到 keydown，</text>
+      <text x="660" y="130">Lexical 的 KEY_ENTER_COMMAND</text>
+      <text x="660" y="150">和外层快捷键服务都收不到，</text>
+      <text x="660" y="170">所有键盘发送路径一次掐断。</text>
+    </g>
+    <line x1="640" y1="104" x2="632" y2="104" stroke="#d9dde3" stroke-width="1.5"/>
+
+    <g font-size="12" fill="#6b7280">
+      <text x="660" y="300">Enter 被重放成 Shift+Enter，</text>
+      <text x="660" y="320">composer 对 shift 组合返回</text>
+      <text x="660" y="340">false，于是插入换行节点。</text>
+    </g>
+    <line x1="640" y1="294" x2="632" y2="294" stroke="#d9dde3" stroke-width="1.5"/>
+
+    <!-- ===== 键盘对照 ===== -->
+    <line x1="40" y1="404" x2="860" y2="404" stroke="#eef0f3" stroke-width="1.5"/>
+
+    <rect x="40" y="424" width="86" height="34" rx="9" fill="#ffffff" stroke="#c9ced6" stroke-width="1.5"/>
+    <text x="83" y="446" font-size="13" text-anchor="middle" fill="#6b7280">Enter</text>
+    <line x1="49" y1="453" x2="117" y2="429" stroke="#d92d20" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="140" y="446" font-size="12.5" fill="#111827">只换行，不发送</text>
+
+    <rect x="300" y="424" width="140" height="34" rx="9" fill="#ffffff" stroke="#c9ced6" stroke-width="1.5"/>
+    <text x="370" y="446" font-size="13" text-anchor="middle" fill="#6b7280">Shift + Enter</text>
+    <text x="454" y="446" font-size="12.5" fill="#111827">换行</text>
+
+    <rect x="552" y="424" width="176" height="34" rx="9" fill="#ffffff" stroke="#c9ced6" stroke-width="1.5"/>
+    <text x="640" y="446" font-size="13" text-anchor="middle" fill="#6b7280">Ctrl / ⌘ / Alt + Enter</text>
+    <text x="742" y="446" font-size="12.5" fill="#111827">不发送也不换行</text>
+  </g>
+</svg>

@@ -6,6 +6,8 @@
 - **只能鼠标发送**：消息只能点发送按钮发出去，任何键盘组合都不会触发发送。
 - **输入框灰色提示**：输入框里以灰色显示「已屏蔽Enter 发送」，开始打字后提示会挪到发送按钮左侧常驻。
 
+![行为示意：空输入框的灰色提示、打字后的按钮旁提示、以及 Enter 键被划掉](docs/preview.png)
+
 ## 为什么需要它
 
 DSH 的输入框默认是 Enter 发送、Shift+Enter 换行。写长 prompt、贴代码、或者在中文输入法里选词时，误按 Enter 会直接把没写完的内容发出去。这个插件把发送权完全交给鼠标，误发就不可能发生。
@@ -59,6 +61,8 @@ cordis.patch.yml    bundle patch，向组合插入本插件
 locale/zh.json      中文标题与描述
 locale/en.json      English title and description
 icon.svg            图标
+docs/preview.svg    行为示意图（源文件）
+docs/preview.png    行为示意图（渲染结果，README 里引用）
 test/harness.cjs    离线测试
 ```
 
