@@ -18,7 +18,7 @@
  * the moment a user is about to press Enter.
  */
 window.__ModuleLoader__.load({
-  id: '@local/dsh-no-enter-sand',
+  id: 'dsh-no-enter-sand',
   factory(require) {
     'use strict';
 

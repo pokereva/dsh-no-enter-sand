@@ -1,5 +1,5 @@
 {
-  "name": "@local/dsh-no-enter-sand",
+  "name": "dsh-no-enter-sand",
   "version": "1.0.0",
   "description": "Blocks Enter from sending in the DSH composer: Enter becomes a line break, messages leave only from the send button, and the input box says so in gray.",
   "keywords": [

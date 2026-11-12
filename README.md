@@ -6,7 +6,7 @@
 - **只能鼠标发送**：消息只能点发送按钮发出去，任何键盘组合都不会触发发送。
 - **输入框灰色提示**：输入框里以灰色显示「已屏蔽Enter 发送」，开始打字后提示会挪到发送按钮左侧常驻。
 
-![行为示意：空输入框的灰色提示、打字后的按钮旁提示、以及 Enter 键被划掉](docs/preview.png)
+![行为示意：空输入框的灰色提示、打字后的按钮旁提示、以及 Enter 键被划掉](https://raw.githubusercontent.com/pokereva/dsh-no-enter-sand/main/docs/preview.png)
 
 ## 为什么需要它
 
