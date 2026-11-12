@@ -14,6 +14,14 @@
   ],
   "license": "MIT",
   "author": "poker",
+  "homepage": "https://github.com/pokereva/dsh-no-enter-sand#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pokereva/dsh-no-enter-sand.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pokereva/dsh-no-enter-sand/issues"
+  },
   "type": "module",
   "exports": {
     ".": "./index.js",
