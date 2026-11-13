@@ -2,6 +2,9 @@
 
 一个只做一件事的 DeepSeek Harness Web 插件：**Enter 不再发送消息**。
 
+[![npm](https://img.shields.io/npm/v/dsh-no-enter-sand.svg)](https://www.npmjs.com/package/dsh-no-enter-sand)
+[![license](https://img.shields.io/npm/l/dsh-no-enter-sand.svg)](LICENSE)
+
 - **Enter 变回换行键**：按 Enter 就是换行，和写文档一样。
 - **只能鼠标发送**：消息只能点发送按钮发出去，任何键盘组合都不会触发发送。
 - **输入框灰色提示**：输入框里以灰色显示「已屏蔽Enter 发送」，开始打字后提示会挪到发送按钮左侧常驻。
@@ -27,7 +30,19 @@ DSH 的输入框默认是 Enter 发送、Shift+Enter 换行。写长 prompt、�
 
 ## 安装
 
-在本 profile 里安装（工作区已有源码时）：
+从 npm 安装（推荐）：
+
+```bash
+dsh plugin add dsh-no-enter-sand
+```
+
+或者在会话里直接让 agent 装：
+
+```
+plugin_manager({ action: 'install_bundle', target: 'dsh-no-enter-sand' })
+```
+
+工作区里有源码时，也可以指向本地目录：
 
 ```
 plugin_manager({ action: 'install_bundle', target: '<本目录绝对路径>' })
