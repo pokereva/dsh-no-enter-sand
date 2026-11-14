@@ -89,6 +89,16 @@ test/harness.cjs    离线测试
 - 旧仓库地址 `github.com/pokereva/dsh-no-enter-sand` 会自动 301 跳转到新仓库，commit 历史与 release 完整保留。
 - 只有包名变了，**功能、入口、bundle 名字段全部一致**，插件行为不受影响。
 
+## 兼容性
+
+在 **DSH 0.2.2-rc.1** 与 **0.2.2-rc.3** 上实测通过。插件只依赖三样稳定契约，它们在 rc.1 → rc.3 之间未发生变化：
+
+- `data-composer-input`（Lexical 的 contenteditable 根节点）与 `data-composer-placeholder`（占位符层）两个属性；
+- `conversation.input.right` 槽位（`ctx.slots.register({ name, id, order }, Component)`）；
+- `dsh.bundle.patch` + `dsh.client`（`platform: 'web'`、`inject`、`immediately`、`exports["./client"]`）包清单。
+
+rc.3 上的实测结果：`Enter` 与 `Shift+Enter` 各插入一次换行、`Ctrl+Enter` 被吞掉不发送、草稿始终留在输入框里、全程零发送请求；占位符灰字与按钮左侧提示同时渲染。不依赖哈希类名，也不依赖 composer 的内部实现，因此小版本升级通常无需改动。
+
 ## 许可
 
 MIT

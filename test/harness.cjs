@@ -306,6 +306,11 @@ const css = styleTag === null ? '' : styleTag.textContent;
 check('样式必须包含输入框灰色提示', css.indexOf('已屏蔽Enter 发送') >= 0, css.slice(0, 120));
 check('提示必须挂在占位符节点上', css.indexOf('[data-composer-placeholder]::after') >= 0);
 check('样式必须禁用指针事件', css.indexOf('pointer-events: none') >= 0);
+/* The shell ships lang="en" and switches to zh-CN later, so the suffix cannot be
+   frozen at load time; both languages must be present as :lang() rules. */
+check('占位符提示必须按语言分别声明', css.indexOf('[data-composer-placeholder]:lang(zh)::after') >= 0);
+check('占位符英文提示必须内置', css.indexOf('Enter is blocked') >= 0);
+check('占位符中文提示必须内置', css.indexOf('已屏蔽Enter 发送') >= 0);
 
 assertEqual('必须注册一个输入框控件', registered.length, 1);
 const caption = registered.length === 0 ? null : registered[0];

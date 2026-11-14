@@ -45,13 +45,25 @@ window.__ModuleLoader__.load({
       return String(value).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
     }
 
+    /**
+     * The placeholder suffix is written as two `:lang()` rules instead of one
+     * string built at load time. The shell serves its HTML with lang="en" and
+     * only switches documentElement.lang to zh-CN once the locale module
+     * materialises, which can land after this stylesheet is installed; reading
+     * the language once would freeze the wrong text into the CSS. Delegating to
+     * `:lang()` lets the browser re-evaluate it whenever the attribute changes,
+     * and keeps the two hint surfaces in the same language at all times.
+     */
     function cssText() {
       return [
         '/* Same gray, same line as the composer placeholder, only while empty. */',
         '[data-composer-placeholder]::after {',
-        '  content: " · ' + quote(hintText()) + '";',
+        '  content: " · ' + quote(HINT_EN) + '";',
         '  color: inherit;',
         '  pointer-events: none;',
+        '}',
+        '[data-composer-placeholder]:lang(zh)::after {',
+        '  content: " · ' + quote(HINT_ZH) + '";',
         '}',
         '',
         '/* Toolbar caption: stays visible after typing begins. */',
