@@ -1,15 +1,15 @@
-# dsh-no-enter-sand · 屏蔽 Enter 发送
+# dsh-no-enter-send · 屏蔽 Enter 发送
 
 一个只做一件事的 DeepSeek Harness Web 插件：**Enter 不再发送消息**。
 
-[![npm](https://img.shields.io/npm/v/dsh-no-enter-sand.svg)](https://www.npmjs.com/package/dsh-no-enter-sand)
-[![license](https://img.shields.io/npm/l/dsh-no-enter-sand.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/dsh-no-enter-send.svg)](https://www.npmjs.com/package/dsh-no-enter-send)
+[![license](https://img.shields.io/npm/l/dsh-no-enter-send.svg)](LICENSE)
 
 - **Enter 变回换行键**：按 Enter 就是换行，和写文档一样。
 - **只能鼠标发送**：消息只能点发送按钮发出去，任何键盘组合都不会触发发送。
 - **输入框灰色提示**：输入框里以灰色显示「已屏蔽Enter 发送」，开始打字后提示会挪到发送按钮左侧常驻。
 
-![行为示意：空输入框的灰色提示、打字后的按钮旁提示、以及 Enter 键被划掉](https://raw.githubusercontent.com/pokereva/dsh-no-enter-sand/main/docs/preview.png)
+![行为示意：空输入框的灰色提示、打字后的按钮旁提示、以及 Enter 键被划掉](https://raw.githubusercontent.com/pokereva/dsh-no-enter-send/main/docs/preview.png)
 
 ## 为什么需要它
 
@@ -33,13 +33,13 @@ DSH 的输入框默认是 Enter 发送、Shift+Enter 换行。写长 prompt、�
 从 npm 安装（推荐）：
 
 ```bash
-dsh plugin add dsh-no-enter-sand
+dsh plugin add dsh-no-enter-send
 ```
 
 或者在会话里直接让 agent 装：
 
 ```
-plugin_manager({ action: 'install_bundle', target: 'dsh-no-enter-sand' })
+plugin_manager({ action: 'install_bundle', target: 'dsh-no-enter-send' })
 ```
 
 工作区里有源码时，也可以指向本地目录：
@@ -80,6 +80,14 @@ docs/preview.svg    行为示意图（源文件）
 docs/preview.png    行为示意图（渲染结果，README 里引用）
 test/harness.cjs    离线测试
 ```
+
+## 关于旧名
+
+这个包最初发布时叫 `dsh-no-enter-sand`（sand = 沙子），是拼写错误，正确单词是 **send**（发送）。现已改名为 `dsh-no-enter-send`：
+
+- 旧包 `dsh-no-enter-sand` 已弃用（deprecated），`npm i dsh-no-enter-sand` 会提示改用新包。
+- 旧仓库地址 `github.com/pokereva/dsh-no-enter-sand` 会自动 301 跳转到新仓库，commit 历史与 release 完整保留。
+- 只有包名变了，**功能、入口、bundle 名字段全部一致**，插件行为不受影响。
 
 ## 许可
 

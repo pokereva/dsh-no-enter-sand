@@ -1,6 +1,6 @@
 {
-  "name": "dsh-no-enter-sand",
-  "version": "1.0.1",
+  "name": "dsh-no-enter-send",
+  "version": "1.0.0",
   "description": "Blocks Enter from sending in the DSH composer: Enter becomes a line break, messages leave only from the send button, and the input box says so in gray.",
   "keywords": [
     "deepseek",
@@ -14,13 +14,13 @@
   ],
   "license": "MIT",
   "author": "poker",
-  "homepage": "https://github.com/pokereva/dsh-no-enter-sand#readme",
+  "homepage": "https://github.com/pokereva/dsh-no-enter-send#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pokereva/dsh-no-enter-sand.git"
+    "url": "git+https://github.com/pokereva/dsh-no-enter-send.git"
   },
   "bugs": {
-    "url": "https://github.com/pokereva/dsh-no-enter-sand/issues"
+    "url": "https://github.com/pokereva/dsh-no-enter-send/issues"
   },
   "type": "module",
   "exports": {

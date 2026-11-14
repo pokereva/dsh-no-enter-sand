@@ -1,5 +1,5 @@
 /**
- * dsh-no-enter-sand — Enter cannot send; only the mouse sends.
+ * dsh-no-enter-send — Enter cannot send; only the mouse sends.
  *
  * Why a capture-phase window listener: the composer's Lexical editor handles
  * KEY_ENTER_COMMAND on the contenteditable root (bubble phase) and the shell's
@@ -18,12 +18,12 @@
  * the moment a user is about to press Enter.
  */
 window.__ModuleLoader__.load({
-  id: 'dsh-no-enter-sand',
+  id: 'dsh-no-enter-send',
   factory(require) {
     'use strict';
 
     const { createElement: h } = require('react');
-    const STYLE_ID = 'dsh-no-enter-sand';
+    const STYLE_ID = 'dsh-no-enter-send';
     const HINT_ZH = '已屏蔽Enter 发送';
     const HINT_EN = 'Enter is blocked · click to send';
     const HINT_CLASS = 'dsnes-hint';
@@ -210,7 +210,7 @@ window.__ModuleLoader__.load({
       apply(ctx) {
         ctx.effect(function stylesEffect() {
           return ensureStyles();
-        }, 'dsh-no-enter-sand: styles');
+        }, 'dsh-no-enter-send: styles');
 
         ctx.effect(function enterEffect() {
           if (typeof window === 'undefined' || window === null) return function noop() {};
@@ -218,7 +218,7 @@ window.__ModuleLoader__.load({
           return function removeEnterListener() {
             window.removeEventListener('keydown', onKeyDownCapture, true);
           };
-        }, 'dsh-no-enter-sand: enter');
+        }, 'dsh-no-enter-send: enter');
 
         ctx.slots.inject('conversation.input.right', function registerHint() {
           return ctx.slots.register({
@@ -229,7 +229,7 @@ window.__ModuleLoader__.load({
         });
 
         if (typeof window !== 'undefined' && window !== null) {
-          window.__dshNoEnterSand = {
+          window.__dshNoEnterSend = {
             version: 1,
             hint: hintText,
             isEnter: isEnterGesture,

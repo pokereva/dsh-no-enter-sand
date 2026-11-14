@@ -1,5 +1,5 @@
 /**
- * Offline harness for dsh-no-enter-sand.
+ * Offline harness for dsh-no-enter-send.
  *
  * The plugin is a browser bundle: it calls window.__ModuleLoader__.load and
  * touches nothing but the DOM. This harness supplies a small fake DOM, runs
@@ -300,7 +300,7 @@ if (plugin !== null && typeof plugin.apply === 'function') plugin.apply(ctx);
 
 /* --- hint text ---------------------------------------------------------- */
 
-const styleTag = document.querySelector('style[data-plugin-css="dsh-no-enter-sand"]');
+const styleTag = document.querySelector('style[data-plugin-css="dsh-no-enter-send"]');
 check('必须注入样式表', styleTag !== null);
 const css = styleTag === null ? '' : styleTag.textContent;
 check('样式必须包含输入框灰色提示', css.indexOf('已屏蔽Enter 发送') >= 0, css.slice(0, 120));
@@ -314,8 +314,8 @@ const rendered = caption === null ? null : caption.component();
 assertEqual('提示文案', rendered === null ? null : rendered.children[0], '已屏蔽Enter 发送');
 assertEqual('提示类名', rendered === null ? null : rendered.props.className, 'dsnes-hint');
 
-check('必须暴露调试句柄', typeof window.__dshNoEnterSand === 'object' && window.__dshNoEnterSand !== null);
-assertEqual('调试句柄版本', window.__dshNoEnterSand === undefined ? null : window.__dshNoEnterSand.version, 1);
+check('必须暴露调试句柄', typeof window.__dshNoEnterSend === 'object' && window.__dshNoEnterSend !== null);
+assertEqual('调试句柄版本', window.__dshNoEnterSend === undefined ? null : window.__dshNoEnterSend.version, 1);
 
 /* --- composer fixture ---------------------------------------------------- */
 
@@ -409,16 +409,16 @@ function createComposer() {
 
 {
   documentElement.lang = 'en-US';
-  check('英文环境提示必须切换', window.__dshNoEnterSand.hint() === 'Enter is blocked · click to send');
+  check('英文环境提示必须切换', window.__dshNoEnterSend.hint() === 'Enter is blocked · click to send');
   documentElement.lang = 'zh-CN';
-  check('中文环境提示必须保持', window.__dshNoEnterSand.hint() === '已屏蔽Enter 发送');
+  check('中文环境提示必须保持', window.__dshNoEnterSend.hint() === '已屏蔽Enter 发送');
 }
 
 /* --- teardown ---------------------------------------------------------- */
 
 {
   for (const cleanup of cleanups) cleanup();
-  assertEqual('卸载必须移除样式表', document.querySelector('style[data-plugin-css="dsh-no-enter-sand"]'), null);
+  assertEqual('卸载必须移除样式表', document.querySelector('style[data-plugin-css="dsh-no-enter-send"]'), null);
   const { input } = createComposer();
   const event = fireKeyDown(input, { key: 'Enter', code: 'Enter', keyCode: 13, cancelable: true });
   assertEqual('卸载后 Enter 必须恢复原状', event.defaultPrevented, false);
